@@ -323,6 +323,7 @@ function services_radvd_configure($blacklist = array())
         $radvdconf .= "\tAdvSendAdvert on;\n";
         $radvdconf .= "\tMinRtrAdvInterval 3;\n";
         $radvdconf .= "\tMaxRtrAdvInterval 10;\n";
+        $radvdconf .= "\tAdvDefaultLifetime 300;\n";
         $radvdconf .= "\tAdvLinkMTU ". (is_numeric($mtu) ? $mtu : 1280) .";\n";
         $radvdconf .= "\tAdvOtherConfigFlag on;\n";
         $radvdconf .= "\tprefix {$subnetv6}/{$ifcfgsnv6} {\n";
